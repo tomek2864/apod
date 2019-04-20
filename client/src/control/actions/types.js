@@ -1,0 +1,5 @@
+export const SET_APOD_DATE_INPUT = "SET_APOD_DATE_INPUT";
+export const GET_APOD_DATA = "GET_APOD_DATA";
+export const LOADING_APOD_DATA = "LOADING_APOD_DATA";
+export const LOADED_APOD_DATA = "LOADED_APOD_DATA";
+export const ERROR_APOD = "ERROR_APOD";
