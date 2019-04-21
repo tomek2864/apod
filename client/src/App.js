@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App">
+          <div className="App bg-dark ">
             <Route exact path="/" component={Header} />
             <Route exact path="/" component={Description} />
             {/* </App><Route exact path="/error" component={Error} /> */}
