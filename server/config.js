@@ -1,3 +1,5 @@
+keyApi = require("./key");
+
 module.exports = {
   baseUrl: {
     protocol: "https",
@@ -8,5 +10,5 @@ module.exports = {
     date: "date"
   },
 
-  APIkey: "XXXX"
+  APIkey: keyApi.APIkey
 };
