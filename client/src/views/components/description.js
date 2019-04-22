@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getApodData } from "../../control/actions/apodAction";
+import YouTube from "react-youtube-embed";
 
 class Description extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class Description extends Component {
       copyright,
       explanation,
       hdurl,
+      media_type,
       title,
       url
     } = this.props;
@@ -46,18 +48,28 @@ class Description extends Component {
               </p>
             </div>
             <div className="align-self-stretch">
-              <img
-                src={url}
-                alt="NASA image"
-                className="rounded img-fluid mb-3"
-                max-width="1000px"
-                max-height="600px"
-              />
+              {media_type === "image" ? (
+                <img
+                  src={url}
+                  alt="NASA image"
+                  className="rounded img-fluid mb-3"
+                  max-width="1000px"
+                  max-height="600px"
+                />
+              ) : (
+                <div className="rounded img-fluid mb-3">
+                  <YouTube id={url} />
+                </div>
+              )}
             </div>
           </div>
         )}
         <footer className="bg-dark text-white m5-5 p-4 text-center">
-          Copyright &copy; {new Date().getFullYear()} tsobczak.pl
+          Copyright &copy; {new Date().getFullYear()}{" "}
+          {/* <a href="https://tsobczak.pl" class="text-warning stretched-link">
+            Tomasz Sobczak
+          </a> */}
+          tsobczak.pl
         </footer>
       </div>
     );
@@ -75,6 +87,7 @@ const mapStateToProps = state => {
     title,
     hdurl,
     copyright,
+    media_type,
     loading,
     loaded,
     error
@@ -89,7 +102,8 @@ const mapStateToProps = state => {
     url: url,
     explanation: explanation,
     hdurl: hdurl,
-    copyright: copyright
+    copyright: copyright,
+    media_type: media_type
   };
 };
 
