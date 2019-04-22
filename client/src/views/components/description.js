@@ -33,6 +33,14 @@ class Description extends Component {
 
     return (
       <div>
+        {loading && (
+          <div>
+            <div className="spinner-border text-success" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        )}
+
         {loaded && (
           <div className="card col-md-6 offset-md-3">
             <div className="card-body">

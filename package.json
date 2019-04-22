@@ -1,7 +1,7 @@
 {
-  "name": "airport-site",
+  "name": "apod-site",
   "version": "1.0.0",
-  "description": "Aplikacja pobierająca dane o lotach",
+  "description": "Aplikacja pobierająca A Picture of Day z API NASA",
   "main": "server.js",
   "scripts": {
     "client-install": "cd client && npm install",
